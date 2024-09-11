@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneig de Pàdel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Torneig La Trampa Artós Setembre 2024</h1>
+            <nav>
+                <button class="tab-button active" onclick="openTab('home')">Home</button>
+                <button class="tab-button" onclick="openTab('teams')">Formació d'Equips</button>
+                <button class="tab-button" onclick="openTab('results')">Introducció del Resultat</button>
+                <button class="tab-button" onclick="openTab('classification')">Classificació</button>
+            </nav>
+        </header>
+
+        <!-- Pestanya Home -->
+        <section id="home" class="tab-content active">
+            <h2>Presentació del Campionat</h2>
+            <!-- Bloc de la presentació inicial -->
+            <div class="block">
+                <h3>Resum executiu</h3>
+                <p><strong>Competició per equips:</strong> Un equip està format per 5 jugadors, un d'ells fa les funcions de capità.</p>
+                <p><strong>Formació dels equips</strong> La creació del equip i la selecció del capità és totalment aleatòria.</p>
+                <p><strong>Fase de lliga (6 partits):</strong> Cada equip juga un cop contra els altres tres equips.</p>
+                <p><strong>Semifinals (2 partits):</strong> 1r vs 4t i 2n vs 3r, un sol partit per eliminatòria.</p>
+                <p><strong>Finals (2 partits):</strong> Final pel 3r lloc i Final pel campionat, un sol partit.</p>
+                <p><strong>Total partits:</strong> 10</p>
+            </div>
+
+            <div class="block">
+                <h3>Dia 1: Fase de Lliga (6 partits)</h3>
+                <h4>Bloc 1: 10:00 - 11:30</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Pista</th>
+                            <th>Enfrontament</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pista 1</td>
+                            <td>A vs B</td>
+                        </tr>
+                        <tr>
+                            <td>Pista 2</td>
+                            <td>C vs D</td>
+                        </tr>
+                        <tr>
+                            <td>Pista 3</td>
+                            <td>A vs C</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Bloc 2: 12:00 - 13:30</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Pista</th>
+                            <th>Enfrontament</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pista 1</td>
+                            <td>B vs D</td>
+                        </tr>
+                        <tr>
+                            <td>Pista 2</td>
+                            <td>A vs D</td>
+                        </tr>
+                        <tr>
+                            <td>Pista 3</td>
+                            <td>B vs C</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Dia 2: Semifinals i Finals</h3>
+                <h4>Bloc 3: 10:00 - 11:30 (Semifinals)</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Pista</th>
+                            <th>Enfrontament</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pista 1</td>
+                            <td>Semifinal 1: 1r classificat vs 4t classificat</td>
+                        </tr>
+                        <tr>
+                            <td>Pista 2</td>
+                            <td>Semifinal 2: 2n classificat vs 3r classificat</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Bloc 4: 12:00 - 13:30 (Finals)</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Pista</th>
+                            <th>Enfrontament</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pista 1</td>
+                            <td>Final 3r lloc: Perdedor Semifinal 1 vs Perdedor Semifinal 2</td>
+                        </tr>
+                        <tr>
+                            <td>Pista 2</td>
+                            <td>Final campionat: Guanyador Semifinal 1 vs Guanyador Semifinal 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <h3>Resum</h3>
+                <p><strong>Durada total del torneig:</strong> 2 dies</p>
+                <p><strong>Partits per bloc:</strong> 3 partits simultanis durant la fase de lliga, 2 partits simultanis a semifinals i finals.</p>
+                <p><strong>Durada per bloc:</strong> 1.5 hores</p>
+            </div>
+        </section>
+
+        <!-- Pestanya Formació d'Equips -->
+        <section id="teams" class="tab-content">
+            <h2>Formació dels Equips</h2>
+
+            <!-- Equip A -->
+            <div id="equipA" class="block">
+                <h3>Equip A</h3>
+                <label for="captainA">Capità:</label>
+                <select id="captainA" class="player-select"></select>
+
+                <label for="player1A">Jugador 1:</label>
+                <select id="player1A" class="player-select"></select>
+
+                <label for="player2A">Jugador 2:</label>
+                <select id="player2A" class="player-select"></select>
+
+                <label for="player3A">Jugador 3:</label>
+                <select id="player3A" class="player-select"></select>
+
+                <label for="player4A">Jugador 4:</label>
+                <select id="player4A" class="player-select"></select>
+
+                <button type="button" onclick="saveTeam('A')">Guardar Equip A</button>
+                <button type="button" onclick="deleteTeam('A')">Eliminar Equip A</button>
+                <div id="summaryA" class="summary"></div>
+                <div id="errorA" class="error-message"></div>
+            </div>
+
+            <!-- Equip B -->
+            <div id="equipB" class="block">
+                <h3>Equip B</h3>
+                <label for="captainB">Capità:</label>
+                <select id="captainB" class="player-select"></select>
+
+                <label for="player1B">Jugador 1:</label>
+                <select id="player1B" class="player-select"></select>
+
+                <label for="player2B">Jugador 2:</label>
+                <select id="player2B" class="player-select"></select>
+
+                <label for="player3B">Jugador 3:</label>
+                <select id="player3B" class="player-select"></select>
+
+                <label for="player4B">Jugador 4:</label>
+                <select id="player4B" class="player-select"></select>
+
+                <button type="button" onclick="saveTeam('B')">Guardar Equip B</button>
+                <button type="button" onclick="deleteTeam('B')">Eliminar Equip B</button>
+                <div id="summaryB" class="summary"></div>
+                <div id="errorB" class="error-message"></div>
+            </div>
+
+            <!-- Equip C -->
+            <div id="equipC" class="block">
+                <h3>Equip C</h3>
+                <label for="captainC">Capità:</label>
+                <select id="captainC" class="player-select"></select>
+
+                <label for="player1C">Jugador 1:</label>
+                <select id="player1C" class="player-select"></select>
+
+                <label for="player2C">Jugador 2:</label>
+                <select id="player2C" class="player-select"></select>
+
+                <label for="player3C">Jugador 3:</label>
+                <select id="player3C" class="player-select"></select>
+
+                <label for="player4C">Jugador 4:</label>
+                <select id="player4C" class="player-select"></select>
+
+                <button type="button" onclick="saveTeam('C')">Guardar Equip C</button>
+                <button type="button" onclick="deleteTeam('C')">Eliminar Equip C</button>
+                <div id="summaryC" class="summary"></div>
+                <div id="errorC" class="error-message"></div>
+            </div>
+
+            <!-- Equip D -->
+            <div id="equipD" class="block">
+                <h3>Equip D</h3>
+                <label for="captainD">Capità:</label>
+                <select id="captainD" class="player-select"></select>
+
+                <label for="player1D">Jugador 1:</label>
+                <select id="player1D" class="player-select"></select>
+
+                <label for="player2D">Jugador 2:</label>
+                <select id="player2D" class="player-select"></select>
+
+                <label for="player3D">Jugador 3:</label>
+                <select id="player3D" class="player-select"></select>
+
+                <label for="player4D">Jugador 4:</label>
+                <select id="player4D" class="player-select"></select>
+
+                <button type="button" onclick="saveTeam('D')">Guardar Equip D</button>
+                <button type="button" onclick="deleteTeam('D')">Eliminar Equip D</button>
+                <div id="summaryD" class="summary"></div>
+                <div id="errorD" class="error-message"></div>
+            </div>
+        </section>
+
+        <!-- Pestanya Introducció del Resultat -->
+        <section id="results" class="tab-content">
+            <h2>Introducció de Resultats</h2>
+            <div id="resultForm" class="block">
+                <div>
+                    <label for="team1">Equip 1:</label>
+                    <select id="team1"></select>
+
+                    <label for="player1_team1">Jugador 1:</label>
+                    <select id="player1_team1"></select>
+
+                    <label for="player2_team1">Jugador 2:</label>
+                    <select id="player2_team1"></select>
+                </div>
+
+                <div>
+                    <label for="team2">Equip 2:</label>
+                    <select id="team2"></select>
+
+                    <label for="player1_team2">Jugador 1:</label>
+                    <select id="player1_team2"></select>
+
+                    <label for="player2_team2">Jugador 2:</label>
+                    <select id="player2_team2"></select>
+                </div>
+
+                <h3>Resultats:</h3>
+                <div class="results-input">
+                    <label>Primer Set:</label>
+                    <input type="number" id="set1_team1" placeholder="Jocs Equip 1">
+                    <input type="number" id="set1_team2" placeholder="Jocs Equip 2">
+                </div>
+
+                <div class="results-input">
+                    <label>Segon Set:</label>
+                    <input type="number" id="set2_team1" placeholder="Jocs Equip 1">
+                    <input type="number" id="set2_team2" placeholder="Jocs Equip 2">
+                </div>
+
+                <div class="results-input">
+                    <label>Tercer Set:</label>
+                    <input type="number" id="set3_team1" placeholder="Jocs Equip 1">
+                    <input type="number" id="set3_team2" placeholder="Jocs Equip 2">
+                </div>
+
+                <button type="button" onclick="saveResult()">Guardar Resultat</button>
+            </div>
+
+            <div class="block">
+                <h3>Resultats Guardats</h3>
+                <table id="resultsTable" class="table">
+                    <thead>
+                        <tr>
+                            <th>Enfrontament</th>
+                            <th>Resultat</th>
+                            <th>Guanyador</th>
+                            <th>Accions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pestanya Classificació -->
+        <section id="classification" class="tab-content">
+            <h2>Classificació general</h2>
+
+            <div class="block">
+                <h3>Classificació d'Equips</h3>
+                <table id="teamRanking" class="table">
+                    <thead>
+                        <tr>
+                            <th>Equip</th>
+                            <th>Punts</th>
+                            <th>Jugats</th>
+                            <th>Guanyats</th>
+                            <th>Perduts</th>
+                            <th>Jocs a favor</th>
+                            <th>Jocs en contra</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <h3>Classificació de Jugadors</h3>
+                <table id="playerRanking" class="table">
+                    <thead>
+                        <tr>
+                            <th>Jugador</th>
+                            <th>Punts</th>
+                            <th>Jugats</th>
+                            <th>Guanyats</th>
+                            <th>Perduts</th>
+                            <th>Jocs a favor</th>
+                            <th>Jocs en contra</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                   <button onclick="exportClassification()">Descarregar Classificació</button>
+            </div>
+        </section>
+    </div>
+    
+
+    <script src="script.js"></script>
+    
+    
+</body>
+</html>
